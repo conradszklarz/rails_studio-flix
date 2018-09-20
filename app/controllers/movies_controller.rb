@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
       redirect_to @movie, notice: "Movie successfully updated!"
     else
       render :edit
-    end  
+    end
   end
 
   def new
@@ -27,7 +27,7 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
-       redirect_to @movie, notice: "Movie successfully created!"
+      redirect_to @movie, notice: "Movie successfully created!"
     else
       render :new
     end
@@ -46,3 +46,4 @@ private
       permit(:title, :description, :rating, :released_on, :total_gross, :cast, :director, :duration, :image_file_name)
   end
 end
+
